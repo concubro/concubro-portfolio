@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>concubro</title>
+  <meta name="description" content="Essays from concubro." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://concubro.com/article.html" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #e0ddca;
+      color: #111;
+      font: 16px/1.75 "Playfair Display", Georgia, serif;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1rem 1rem 4rem;
+    }
+    a { color: inherit; }
+    header { margin: 1rem 0 2.5rem; }
+    header p, nav { margin: 0 0 1rem; font: 200 1rem/1.6 "Raleway", sans-serif; }
+    .meta { color: rgba(17,17,17,.8); }
+    h1, h2, h3 { margin: 2rem 0 1rem; font-weight: normal; }
+    h1 { font: 400 2.5rem/1.1 "Raleway", sans-serif; margin-top: 0; }
+    h2 { font: italic 1.4rem/1.3 "Playfair Display", Georgia, serif; }
+    h3 { font: 400 1.1rem/1.4 "Raleway", sans-serif; text-transform: uppercase; letter-spacing: .04em; }
+    p, ul, ol, blockquote { margin: 1.25rem 0; }
+    ul, ol { padding-left: 1.4rem; }
+    blockquote {
+      margin-left: 0;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(17,17,17,.25);
+      font-style: italic;
+    }
+    article { text-align: left; }
+    footer {
+      padding: 0 1rem 1rem;
+      font: italic 0.95rem/1.4 "Playfair Display", Georgia, serif;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <nav><a href="./">concubro</a></nav>
+      <h1 id="title">Essay not found</h1>
+      <p id="meta" class="meta"></p>
+    </header>
+    <article id="content">
+      <p>Loading...</p>
+    </article>
+  </main>
+  <footer>made in notepad in 2026 · <a href="mailto:hello@concubro.com">reach out</a></footer>
+  <script type="module">
+    import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+
+    const articles = {
+      "everyones-a-builder-nobody-can-read": {
+        file: "./Everyones-a-Builder-Nobody-Can-Read.md",
+        title: "Everyone's a Builder, Nobody Can Read",
+        description: "A paper about the rise of epistemic misinformation in frontier AI spaces.",
+        author: "@concubro",
+        published: "2026-03-15",
+        publishedLabel: "March 15, 2026"
+      }
+    };
+
+    const slug = new URLSearchParams(location.search).get("slug");
+    const article = articles[slug];
+    const title = document.getElementById("title");
+    const meta = document.getElementById("meta");
+    const content = document.getElementById("content");
+    const setMeta = (name, contentValue, prop) => {
+      let tag = document.head.querySelector(`${prop ? "meta[property" : "meta[name"}="${name}"]`);
+      if (!tag) {
+        tag = document.createElement("meta");
+        tag.setAttribute(prop ? "property" : "name", name);
+        document.head.appendChild(tag);
+      }
+      tag.content = contentValue;
+    };
+
+    if (!article) {
+      meta.textContent = "";
+      content.innerHTML = "<p>This article does not exist yet.</p>";
+    } else {
+      document.title = article.title + " | concubro";
+      title.textContent = article.title;
+      meta.textContent = article.author + " · " + article.publishedLabel;
+      document.querySelector('link[rel="canonical"]').href = "https://concubro.com/article.html?slug=" + slug;
+      setMeta("description", article.description);
+      setMeta("og:title", document.title, true);
+      setMeta("og:description", article.description, true);
+      setMeta("og:url", document.querySelector('link[rel="canonical"]').href, true);
+      document.head.insertAdjacentHTML("beforeend", '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":article.title,"description":article.description,"datePublished":article.published,"mainEntityOfPage":"https://concubro.com/article.html?slug=" + slug,"author":{"@type":"Person","name":article.author},"publisher":{"@type":"Organization","name":"concubro"}}) + "<\/script>");
+      const markdown = await (await fetch(article.file)).text();
+      const html = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
+      content.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
