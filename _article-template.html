@@ -1,12 +1,13 @@
 <!doctype html>
+<!-- Local template for future article pages. Copy this to a new top-level .html file and fill in the article-specific values. -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>concubro</title>
-  <meta name="description" content="Essays from concubro." />
+  <title>Your Article Title | concubro</title>
+  <meta name="description" content="Article description goes here." />
   <meta name="robots" content="noindex" />
-  <link rel="canonical" href="https://concubro.com/article.html" />
+  <link rel="canonical" href="https://concubro.com/your-article.html" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,8 +55,8 @@
   <main>
     <header>
       <nav><a href="./">concubro</a></nav>
-      <h1 id="title">Essay not found</h1>
-      <p id="meta" class="meta"></p>
+      <h1 id="title">Your Article Title</h1>
+      <p id="meta" class="meta">@concubro · Month 00, 2026</p>
     </header>
     <article id="content">
       <p>Loading...</p>
@@ -66,10 +67,10 @@
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
     const articles = {
-      "everyones-a-builder-nobody-can-read": {
-        file: "./Everyones-a-Builder-Nobody-Can-Read.md",
-        title: "Everyone's a Builder, Nobody Can Read",
-        description: "A paper about the rise of epistemic misinformation in frontier AI spaces.",
+      "your-article-slug": {
+        file: "./your-article.md",
+        title: "Your Article Title",
+        description: "Article description goes here.",
         author: "@concubro",
         published: "2026-03-15",
         publishedLabel: "March 15, 2026"
@@ -98,12 +99,12 @@
       document.title = article.title + " | concubro";
       title.textContent = article.title;
       meta.textContent = article.author + " · " + article.publishedLabel;
-      document.querySelector('link[rel="canonical"]').href = "https://concubro.com/article.html?slug=" + slug;
+      document.querySelector('link[rel="canonical"]').href = "https://concubro.com/your-article.html";
       setMeta("description", article.description);
       setMeta("og:title", document.title, true);
       setMeta("og:description", article.description, true);
       setMeta("og:url", document.querySelector('link[rel="canonical"]').href, true);
-      document.head.insertAdjacentHTML("beforeend", '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":article.title,"description":article.description,"datePublished":article.published,"mainEntityOfPage":"https://concubro.com/article.html?slug=" + slug,"author":{"@type":"Person","name":article.author},"publisher":{"@type":"Organization","name":"concubro"}}) + "<\/script>");
+      document.head.insertAdjacentHTML("beforeend", '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":article.title,"description":article.description,"datePublished":article.published,"mainEntityOfPage":"https://concubro.com/your-article.html","author":{"@type":"Person","name":article.author},"publisher":{"@type":"Organization","name":"concubro"}}) + "<\/script>");
       const markdown = await (await fetch(article.file)).text();
       const html = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
       content.innerHTML = html;
