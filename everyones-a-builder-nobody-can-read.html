@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./global.css" />
   <meta property="og:title" content="Everyone's a Builder, Nobody Can Read | concubro" />
   <meta property="og:description" content="A paper about the rise of epistemic misinformation in frontier AI spaces." />
   <meta property="og:type" content="article" />
@@ -25,45 +26,9 @@
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"Everyone's a Builder, Nobody Can Read","description":"A paper about the rise of epistemic misinformation in frontier AI spaces.","datePublished":"2026-03-15","mainEntityOfPage":"https://concubro.com/everyones-a-builder-nobody-can-read.html","author":{"@type":"Person","name":"@concubro"},"publisher":{"@type":"Organization","name":"concubro"}}
   </script>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #e0ddca;
-      color: #111;
-      font: 16px/1.75 "Playfair Display", Georgia, serif;
-    }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 1rem 1rem 4rem;
-    }
-    a { color: inherit; }
-    header { margin: 1rem 0 2.5rem; }
-    header p, nav { margin: 0 0 1rem; font: 200 1rem/1.6 "Raleway", sans-serif; }
-    .meta { color: rgba(17,17,17,.8); }
-    h1, h2, h3 { margin: 2rem 0 1rem; font-weight: normal; }
-    h1 { font: 400 2.5rem/1.1 "Raleway", sans-serif; margin-top: 0; }
-    h2 { font: italic 1.4rem/1.3 "Playfair Display", Georgia, serif; }
-    h3 { font: 400 1.1rem/1.4 "Raleway", sans-serif; text-transform: uppercase; letter-spacing: .04em; }
-    p, ul, ol, blockquote { margin: 1.25rem 0; }
-    ul, ol { padding-left: 1.4rem; }
-    blockquote {
-      margin-left: 0;
-      padding-left: 1rem;
-      border-left: 2px solid rgba(17,17,17,.25);
-      font-style: italic;
-    }
-    article { text-align: left; }
-    footer {
-      padding: 0 1rem 1rem;
-      font: italic 0.95rem/1.4 "Playfair Display", Georgia, serif;
-      text-align: center;
-    }
-  </style>
 </head>
-<body>
-  <main>
+<body class="article-page">
+  <main class="site-shell">
     <header>
       <nav><a href="./">concubro</a></nav>
       <h1>Everyone's a Builder, Nobody Can Read</h1>
@@ -73,7 +38,7 @@
       <p>Loading...</p>
     </article>
   </main>
-  <footer>made in notepad in 2026 · <a href="mailto:hello@concubro.com">reach out</a></footer>
+  <footer>made with notepad in 2026 · <a href="mailto:hello@concubro.com">reach out</a></footer>
   <script type="module">
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
     const markdown = await (await fetch("./Everyones-a-Builder-Nobody-Can-Read.md")).text();

@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light dark;
+  --color-bg: #e0ddca;
+  --color-fg: #111;
+  --color-fg-muted: rgba(17, 17, 17, 0.8);
+  --color-border: rgba(17, 17, 17, 0.25);
+  --color-selection-bg: #100e0e;
+  --color-selection-fg: #e0ddca;
+  --font-display: "Raleway", sans-serif;
+  --font-body: "Playfair Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font: 16px/1.6 var(--font-body);
+  hanging-punctuation: first last;
+}
+
+main {
+  width: fit-content;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: from-font;
+  text-decoration-skip-ink: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+p {
+  margin: 1.5rem 0;
+  font-family: var(--font-body);
+}
+
+ul,
+ol {
+  margin: 1.25rem 0;
+  padding-left: 1.4rem;
+}
+
+footer {
+  padding: 0 1rem 2rem;
+  font: italic 0.95rem/1.4 var(--font-body);
+  text-align: center;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+}
+
+.site-shell {
+  max-width: 680px;
+  padding: 1rem;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-page h1 {
+  margin-top: 1rem;
+  font: 400 2.5rem/1.1 var(--font-display);
+}
+
+.home-page h2 {
+  margin-top: 0.25rem;
+  font: italic 1.25rem/1.4 var(--font-body);
+}
+
+.home-page ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font: 200 1rem/1.6 var(--font-display);
+}
+
+.home-page footer {
+  margin-top: 3rem;
+}
+
+.article-page .site-shell {
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.article-page {
+  font: 16px/1.75 var(--font-body);
+}
+
+.article-page header {
+  margin: 1rem 0 2.5rem;
+}
+
+.article-page header p,
+.article-page nav {
+  margin: 0 0 1rem;
+  font: 200 1rem/1.6 var(--font-display);
+}
+
+.article-page .meta {
+  color: var(--color-fg-muted);
+}
+
+.article-page h1,
+.article-page h2,
+.article-page h3 {
+  margin: 2rem 0 1rem;
+}
+
+.article-page h1 {
+  margin-top: 0;
+  font: 400 2.5rem/1.1 var(--font-display);
+}
+
+.article-page h2 {
+  font: italic 1.4rem/1.3 var(--font-body);
+}
+
+.article-page h3 {
+  font: 400 1.1rem/1.4 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.article-page p,
+.article-page ul,
+.article-page ol,
+.article-page blockquote {
+  margin: 1.25rem 0;
+}
+.article-page p + p {
+  text-indent: 1.5em;
+}
+
+.article-page blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-border);
+  font-style: italic;
+}
+
+.article-page article {
+  text-align: left;
+}
