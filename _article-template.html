@@ -6,22 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Article Title | concubro</title>
   <meta name="description" content="Article description goes here." />
-  <meta name="robots" content="noindex" />
   <link rel="canonical" href="https://concubro.com/your-article.html" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./global.css" />
+  <meta property="og:title" content="Your Article Title | concubro" />
+  <meta property="og:description" content="Article description goes here." />
   <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://concubro.com/your-article.html" />
+  <meta property="og:image" content="https://concubro.com/og-your-article.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Article Title | concubro" />
+  <meta name="twitter:description" content="Article description goes here." />
+  <meta name="twitter:image" content="https://concubro.com/og-your-article.png" />
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Your Article Title","description":"Article description goes here.","datePublished":"2026-03-18","mainEntityOfPage":"https://concubro.com/your-article.html","author":{"@type":"Person","name":"@concubro"},"publisher":{"@type":"Organization","name":"concubro"}}
+  </script>
 </head>
 <body class="article-page">
   <main class="site-shell">
     <header>
       <nav><a href="./">concubro</a></nav>
-      <h1 id="title">Your Article Title</h1>
-      <p id="meta" class="meta">@concubro · Month 00, 2026</p>
+      <h1>Your Article Title</h1>
+      <p class="meta">@concubro · Month 00, 2026</p>
     </header>
     <article id="content">
       <p>Loading...</p>
@@ -30,50 +42,8 @@
   <footer>made with notepad in 2026 · <a href="mailto:hello@concubro.com">reach out</a></footer>
   <script type="module">
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-
-    const articles = {
-      "your-article-slug": {
-        file: "./your-article.md",
-        title: "Your Article Title",
-        description: "Article description goes here.",
-        author: "@concubro",
-        published: "2026-03-15",
-        publishedLabel: "March 15, 2026"
-      }
-    };
-
-    const slug = new URLSearchParams(location.search).get("slug");
-    const article = articles[slug];
-    const title = document.getElementById("title");
-    const meta = document.getElementById("meta");
-    const content = document.getElementById("content");
-    const setMeta = (name, contentValue, prop) => {
-      let tag = document.head.querySelector(`${prop ? "meta[property" : "meta[name"}="${name}"]`);
-      if (!tag) {
-        tag = document.createElement("meta");
-        tag.setAttribute(prop ? "property" : "name", name);
-        document.head.appendChild(tag);
-      }
-      tag.content = contentValue;
-    };
-
-    if (!article) {
-      meta.textContent = "";
-      content.innerHTML = "<p>This article does not exist yet.</p>";
-    } else {
-      document.title = article.title + " | concubro";
-      title.textContent = article.title;
-      meta.textContent = article.author + " · " + article.publishedLabel;
-      document.querySelector('link[rel="canonical"]').href = "https://concubro.com/your-article.html";
-      setMeta("description", article.description);
-      setMeta("og:title", document.title, true);
-      setMeta("og:description", article.description, true);
-      setMeta("og:url", document.querySelector('link[rel="canonical"]').href, true);
-      document.head.insertAdjacentHTML("beforeend", '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":article.title,"description":article.description,"datePublished":article.published,"mainEntityOfPage":"https://concubro.com/your-article.html","author":{"@type":"Person","name":article.author},"publisher":{"@type":"Organization","name":"concubro"}}) + "<\/script>");
-      const markdown = await (await fetch(article.file)).text();
-      const html = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
-      content.innerHTML = html;
-    }
+    const markdown = await (await fetch("./your-article.md")).text();
+    document.getElementById("content").innerHTML = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
   </script>
 </body>
 </html>
