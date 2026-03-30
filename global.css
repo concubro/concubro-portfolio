@@ -134,7 +134,7 @@ footer {
   content: "";
   width: 0.82em;
   height: 0.82em;
-  background: center / contain no-repeat url("./.assets/ChatGPT-Logo.svg");
+  background: center / contain no-repeat url("./chatgpt-logo.svg");
   flex: none;
   opacity: 0.58;
 }
