@@ -144,9 +144,6 @@ footer {
 .article-page blockquote {
   margin: 1.25rem 0;
 }
-.article-page p + p {
-  text-indent: 1.5em;
-}
 
 .article-page blockquote {
   margin-left: 0;
