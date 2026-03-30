@@ -1,0 +1,15 @@
+# concubro
+
+> concubro is a small static site publishing essays about AI, internet culture, and related technical or epistemic themes. Human-facing article pages are HTML, and machine-friendly plain-text versions are linked directly below.
+
+Use the plain-text article URLs when you need the full contents of an essay without JavaScript rendering or page chrome.
+
+## Essays
+
+- [Everyone's a Builder, Nobody Can Read](https://concubro.com/everyones-a-builder-nobody-can-read.txt): Essay on epistemic misformation, shallow expertise, and AI discourse.
+- [When the Trolls Won](https://concubro.com/when-the-trolls-won.txt): Essay on trolling, anti-sincerity, and how internet style migrated into AI and public life.
+
+## Optional
+
+- [Homepage](https://concubro.com/): Site index for human-facing navigation.
+- [OpenClaw PNS Bootstrap Runbook](https://concubro.com/openclaw-pns-bootstrap.md): Draft runbook for helping OpenClaw agents set up a Process Nervous System workflow environment.

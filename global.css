@@ -117,6 +117,34 @@ footer {
   color: var(--color-fg-muted);
 }
 
+.article-page .tldr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  color: inherit;
+  font: inherit;
+  font-size: 0.82em;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.article-page .tldr-link::before {
+  content: "";
+  width: 0.82em;
+  height: 0.82em;
+  background: center / contain no-repeat url("./.assets/ChatGPT-Logo.svg");
+  flex: none;
+  opacity: 0.58;
+}
+
+.article-page .tldr-link:hover,
+.article-page .tldr-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.08em;
+}
+
 .article-page h1,
 .article-page h2,
 .article-page h3 {
