@@ -1,6 +1,6 @@
 # concubro
 
-> concubro is a small static site publishing essays about AI, internet culture, and related technical or epistemic themes. Human-facing article pages are HTML, and machine-friendly plain-text versions are linked directly below.
+> concubro is a small static site for essays and odd things. Human-facing pages are HTML, and machine-friendly plain-text versions of the essays are linked directly below.
 
 Use the plain-text article URLs when you need the full contents of an essay without JavaScript rendering or page chrome.
 

@@ -31,6 +31,12 @@ a {
   color: inherit;
   text-decoration-thickness: from-font;
   text-decoration-skip-ink: auto;
+  text-underline-offset: 0.08em;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0.18em;
 }
 
 h1,
@@ -90,11 +96,109 @@ footer {
   font: 200 1rem/1.6 var(--font-display);
 }
 
+.index-item {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  perspective: 240px;
+}
+
+.index-link,
+.index-title,
+.index-meta {
+  position: relative;
+}
+
+.index-title,
+.index-meta {
+  display: inline-block;
+}
+
+.index-meta {
+  margin-left: 0.24em;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .underprint-ready .index-title {
+    transition:
+      filter 160ms ease-out,
+      transform 160ms ease-out;
+  }
+
+  .underprint-ready .index-meta {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    clip-path: inset(-0.15em 100% -0.15em 0);
+    transition: clip-path 120ms ease-in;
+  }
+
+  .underprint-ready .underprint-fallback .index-meta {
+    position: static;
+    clip-path: none;
+    transition: none;
+  }
+
+  .underprint-ready .underprint-active:not(.underprint-fallback) .index-title,
+  .underprint-ready .index-item:not(.underprint-fallback):focus-within .index-title {
+    filter: drop-shadow(0 0.7px 0 rgba(17, 17, 17, 0.16));
+    transform: translate3d(0, -0.45px, 1px);
+  }
+
+  .underprint-ready .underprint-active:not(.underprint-fallback) .index-meta,
+  .underprint-ready .index-item:not(.underprint-fallback):focus-within .index-meta {
+    clip-path: inset(-0.15em 0 -0.15em 0);
+    transition: clip-path 180ms cubic-bezier(0.2, 0.75, 0.25, 1) 65ms;
+  }
+}
+
 .home-page footer {
   margin-top: 3rem;
 }
 
+.false-edge {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 14px;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(17, 17, 17, 0.34) 0 1px,
+      rgba(232, 228, 208, 0.98) 1px 2px,
+      rgba(17, 17, 17, 0.2) 2px 3px,
+      rgba(196, 191, 169, 0.98) 3px 5px,
+      rgba(17, 17, 17, 0.14) 5px 6px,
+      rgba(224, 221, 202, 0.98) 6px 14px
+    );
+  box-shadow: 0 -1px 0 rgba(17, 17, 17, 0.13);
+  transform: translateY(100%);
+}
+
+.false-edge--seen {
+  animation: false-edge 520ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+@keyframes false-edge {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  28%,
+  68% {
+    opacity: 0.96;
+    transform: translateY(57%);
+  }
+}
+
 .article-page .site-shell {
+  width: min(680px, 100%);
   margin: 0 auto;
   padding-bottom: 4rem;
 }
@@ -182,4 +286,79 @@ footer {
 
 .article-page article {
   text-align: left;
+}
+
+.project-page {
+  font: 16px/1.75 var(--font-body);
+}
+
+.project-page .site-shell {
+  width: min(680px, 100%);
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.project-page header {
+  margin: 1rem 0 2.5rem;
+}
+
+.project-page header nav {
+  margin: 0 0 1rem;
+  font: 200 1rem/1.6 var(--font-display);
+}
+
+.project-page h1 {
+  margin: 0;
+  font: 400 clamp(2rem, 7vw, 2.5rem)/1.08 var(--font-display);
+}
+
+.project-page article {
+  text-align: left;
+}
+
+.project-page article > p {
+  margin: 1.25rem 0;
+}
+
+.project-page .plate {
+  width: min(var(--plate-width, 920px), calc(100vw - 2rem));
+  max-width: none;
+  height: auto;
+  margin: 2rem 0 2.25rem;
+  transform: translateX(min(0px, calc((680px - var(--plate-width, 920px)) / 2)));
+  display: block;
+}
+
+.project-page .plate--portrait {
+  --plate-width: 560px;
+}
+
+.project-page .plate--modest {
+  --plate-width: 680px;
+}
+
+.project-page .outbound {
+  margin-top: 2rem;
+}
+
+@media (max-width: 720px) {
+  .site-shell {
+    width: 100%;
+  }
+
+  .project-page .plate {
+    width: 100%;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
