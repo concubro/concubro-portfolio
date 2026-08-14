@@ -15,7 +15,11 @@ from pathlib import Path
 
 
 def ps_single_quote(value: str) -> str:
-    return "'" + value.replace("'", "''") + "'"
+    # Windows PowerShell treats typographic single quotes as delimiters too.
+    # Double every accepted single-quote form before embedding the value.
+    for quote in ("'", "\u2018", "\u2019"):
+        value = value.replace(quote, quote * 2)
+    return "'" + value + "'"
 
 
 def title_font_size(title: str) -> int:
