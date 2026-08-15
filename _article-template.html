@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./font-arrival.js?v=20260814a"></script>
   <title>Your Article Title | concubro</title>
   <meta name="description" content="Article description goes here." />
   <link rel="canonical" href="https://concubro.com/your-article.html" />
@@ -11,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./global.css?v=20260814e" />
+  <link rel="stylesheet" href="./global.css?v=20260814f" />
   <meta property="og:title" content="Your Article Title | concubro" />
   <meta property="og:description" content="Article description goes here." />
   <meta property="og:type" content="article" />
@@ -35,7 +36,7 @@
       <h1>Your Article Title</h1>
       <p class="meta">@concubro · Month 00, 2026</p>
     </header>
-    <article id="content">
+    <article id="content" data-font-arrival-content="loading">
       <p>Loading...</p>
     </article>
   </main>
@@ -43,7 +44,10 @@
   <script type="module">
     import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
     const markdown = await (await fetch("./your-article.md")).text();
-    document.getElementById("content").innerHTML = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
+    const content = document.getElementById("content");
+    content.innerHTML = marked.parse(markdown).replace(/^<h1>.*?<\/h1>\s*/i, "");
+    content.dataset.fontArrivalContent = "ready";
+    window.dispatchEvent(new Event("font-arrival-content-ready"));
   </script>
   <script src="./false-edge.js?v=20260814e" defer></script>
 </body>

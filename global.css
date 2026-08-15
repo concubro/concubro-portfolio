@@ -10,6 +10,10 @@
   --font-body: "Playfair Display", Georgia, serif;
 }
 
+html {
+  background: var(--color-bg);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -21,6 +25,35 @@ body {
   background: var(--color-bg);
   font: 16px/1.6 var(--font-body);
   hanging-punctuation: first last;
+}
+
+.font-arrival-pending .home-page > main > h1,
+.font-arrival-pending .home-page > main > h2,
+.font-arrival-pending .home-page > main > p,
+.font-arrival-pending .home-page > main > nav li,
+.font-arrival-pending .home-page > footer,
+.font-arrival-pending .article-page > main > header,
+.font-arrival-pending .article-page > main > article > *,
+.font-arrival-pending .article-page > footer,
+.font-arrival-pending .project-page > main > header,
+.font-arrival-pending .project-page > main > article > *,
+.font-arrival-pending .project-page > footer {
+  opacity: 0;
+}
+
+.font-arrival-ready .font-arrival-item {
+  animation: font-arrival 220ms cubic-bezier(0.2, 0.74, 0.24, 1) both;
+  animation-delay: var(--font-arrival-delay, 0ms);
+}
+
+@keyframes font-arrival {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 main {
@@ -353,6 +386,10 @@ footer {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .font-arrival-ready .font-arrival-item {
+    animation-delay: 0ms !important;
+  }
+
   *,
   *::before,
   *::after {
