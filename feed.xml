@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>concubro essays</title>
+  <link href="https://concubro.com/feed.xml" rel="self" />
+  <link href="https://concubro.com/" />
+  <id>https://concubro.com/</id>
+  <updated>2026-08-16T12:00:00Z</updated>
+  <author><name>@concubro</name><uri>https://concubro.com/</uri></author>
+  <entry>
+    <title>The line moves...</title>
+    <link href="https://concubro.com/the-line-moves.html" />
+    <link rel="alternate" type="text/plain" href="https://concubro.com/the-line-moves.txt" />
+    <id>https://concubro.com/the-line-moves.html</id>
+    <published>2026-08-16T12:00:00Z</published>
+    <updated>2026-08-16T12:00:00Z</updated>
+    <summary>An essay about AI legitimacy, local power, and who gets to own the tools.</summary>
+  </entry>
+  <entry>
+    <title>When the Trolls Won</title>
+    <link href="https://concubro.com/when-the-trolls-won.html" />
+    <link rel="alternate" type="text/plain" href="https://concubro.com/when-the-trolls-won.txt" />
+    <id>https://concubro.com/when-the-trolls-won.html</id>
+    <published>2026-03-28T12:00:00Z</published>
+    <updated>2026-03-28T12:00:00Z</updated>
+    <summary>An essay on how irony-poisoned internet culture deforms AI discourse, authority, and sincere inquiry.</summary>
+  </entry>
+  <entry>
+    <title>Everyone&#x27;s a Builder, Nobody Can Read</title>
+    <link href="https://concubro.com/everyones-a-builder-nobody-can-read.html" />
+    <link rel="alternate" type="text/plain" href="https://concubro.com/everyones-a-builder-nobody-can-read.txt" />
+    <id>https://concubro.com/everyones-a-builder-nobody-can-read.html</id>
+    <published>2026-03-15T12:00:00Z</published>
+    <updated>2026-03-15T12:00:00Z</updated>
+    <summary>A paper about the rise of epistemic misinformation in frontier AI spaces.</summary>
+  </entry>
+</feed>

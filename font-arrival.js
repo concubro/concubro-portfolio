@@ -64,18 +64,6 @@
 
   const failsafe = window.setTimeout(reveal, failsafeMs);
 
-  const contentReady = () => {
-    const content = document.querySelector('[data-font-arrival-content="loading"]');
-
-    if (!content) return Promise.resolve();
-
-    return new Promise((resolve) => {
-      window.addEventListener("font-arrival-content-ready", resolve, {
-        once: true,
-      });
-    });
-  };
-
   window.addEventListener(
     "DOMContentLoaded",
     () => {
@@ -87,7 +75,7 @@
         document.fonts.load('400 1em "Playfair Display"'),
         document.fonts.load('italic 400 1em "Playfair Display"'),
       ])
-        .then(() => Promise.all([document.fonts.ready, contentReady()]))
+        .then(() => document.fonts.ready)
         .then(() => {
           window.clearTimeout(failsafe);
           reveal();

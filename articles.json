@@ -1,0 +1,32 @@
+[
+  {
+    "source": "Everyones-a-Builder-Nobody-Can-Read.md",
+    "slug": "everyones-a-builder-nobody-can-read",
+    "title": "Everyone's a Builder, Nobody Can Read",
+    "description": "A paper about the rise of epistemic misinformation in frontier AI spaces.",
+    "published": "2026-03-15",
+    "modified": "2026-03-15",
+    "reading_minutes": 30,
+    "og_image": "og-everyones-a-builder.png"
+  },
+  {
+    "source": "when_the_trolls_won.md",
+    "slug": "when-the-trolls-won",
+    "title": "When the Trolls Won",
+    "description": "An essay on how irony-poisoned internet culture deforms AI discourse, authority, and sincere inquiry.",
+    "published": "2026-03-28",
+    "modified": "2026-03-28",
+    "reading_minutes": 15,
+    "og_image": "og-when-the-trolls-won.png"
+  },
+  {
+    "source": "the-line-moves.md",
+    "slug": "the-line-moves",
+    "title": "The line moves...",
+    "description": "An essay about AI legitimacy, local power, and who gets to own the tools.",
+    "published": "2026-08-16",
+    "modified": "2026-08-16",
+    "reading_minutes": 22,
+    "og_image": "og-the-line-moves.png"
+  }
+]

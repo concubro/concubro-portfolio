@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://concubro.com/</loc>
+    <lastmod>2026-08-16</lastmod>
   </url>
   <url>
     <loc>https://concubro.com/everyones-a-builder-nobody-can-read.html</loc>
+    <lastmod>2026-03-15</lastmod>
   </url>
   <url>
     <loc>https://concubro.com/when-the-trolls-won.html</loc>
+    <lastmod>2026-03-28</lastmod>
   </url>
   <url>
     <loc>https://concubro.com/rope-game.html</loc>
@@ -32,5 +35,9 @@
   </url>
   <url>
     <loc>https://concubro.com/petras-calling.html</loc>
+  </url>
+  <url>
+    <loc>https://concubro.com/the-line-moves.html</loc>
+    <lastmod>2026-08-16</lastmod>
   </url>
 </urlset>
