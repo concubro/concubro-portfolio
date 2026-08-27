@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./font-arrival.js?v=20260816b"></script>
+  <title>8–13–1998 | concubro</title>
+  <meta name="description" content="Rebuilding a childhood CRT feedback loop in Blender." />
+  <link rel="canonical" href="https://concubro.com/8-13-1998.html" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./global.css?v=20260827a" />
+  <meta property="og:title" content="8–13–1998 | concubro" />
+  <meta property="og:description" content="Rebuilding a childhood CRT feedback loop in Blender." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://concubro.com/8-13-1998.html" />
+  <meta property="og:image" content="https://concubro.com/og-8-13-1998.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="8–13–1998 | concubro" />
+  <meta name="twitter:description" content="Rebuilding a childhood CRT feedback loop in Blender." />
+  <meta name="twitter:image" content="https://concubro.com/og-8-13-1998.png" />
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"CreativeWork","name":"8–13–1998","description":"Rebuilding a childhood CRT feedback loop in Blender.","url":"https://concubro.com/8-13-1998.html","image":"https://concubro.com/og-8-13-1998.png","author":{"@type":"Person","name":"@concubro"}}
+  </script>
+</head>
+<body class="project-page">
+  <main class="site-shell">
+    <header>
+      <nav><a href="./">concubro</a></nav>
+      <h1>8–13–1998</h1>
+    </header>
+    <article>
+      <p>When I was a kid I had one of those little five-inch black-and-white portable TVs, and a Sony Video8 Handycam.</p>
+
+      <img class="plate plate--inline" src="./project-media/8-13-1998-feedback-0020.png" width="640" height="480" alt="Black-and-white simulated CRT showing 8/13/1998 receding through a video feedback loop" />
+
+      <p>The TV only had an antenna input, so I used an RF adapter to hook the camera up to it for playback. At some point I realized I could leave the Handycam in camera mode, point it at the screen, and film its own live output.</p>
+
+      <p>That was much more interesting.</p>
+
+      <p>Zooming or moving the camera around would send the picture into dizzying feedback, sometimes forming tunnels and other shapes that changed quickly with small movements. Those sonys also had a built-in title generator, and putting text into the loop produced its own set of trippy artifacts. I used the setup for homemade title sequences for videos no one watched.</p>
+
+      <p>Recently it popped into my mind as a fun thing to recreate in Blender. I've been trying to get more proficient doing silly shit with blender, what a good simple<span class="inline-footnote"><button class="inline-footnote-trigger" type="button" aria-label="Footnote: it was not.">*</button><span class="inline-footnote-tip" role="tooltip" aria-hidden="true">it was not.</span></span> exercise this would make!</p>
+
+      <p>I started by modeling the CRT tube itself rather than the television around it: the glass envelope, phosphor face, electron gun, graphite coating, high-voltage hardware and other parts that are normally hidden inside the case.</p>
+
+      <p>From there the project ballooned in scope into a working screen model, and then into a simulation of the original camera-to-TV feedback setup.</p>
+
+      <p>The virtual Handycam films the CRT, its output is fed back to the screen, and the image develops recursively over time. The simulation includes interlaced raster scanning, phosphor persistence, camera response, signal degradation and real handheld camera behavior such that moving or zooming it changes the feedback in the way I remember.</p>
+
+      <p>It can also take stills or video as input, along with a recreation of the Handycam's chunky built-in title graphics.</p>
+
+      <img class="plate" src="./project-media/8-13-1998-feedback-0260.png" width="640" height="480" alt="Close view of 8/13/1998 multiplying and breaking apart in the simulated video feedback loop" />
+
+      <p>The final test ended up as a short video called <strong>TR416</strong>.</p>
+
+      <div class="tiktok-player">
+        <iframe src="https://www.tiktok.com/player/v1/7678830116188720398?description=1&amp;rel=0" title="TR416 on TikTok" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+      </div>
+      <p class="media-link"><a href="https://www.tiktok.com/@concubro/video/7678830116188720398">Watch on TikTok</a></p>
+
+      <p>The date isn't significant. It just seemed about right.</p>
+    </article>
+  </main>
+  <footer>made with notepad in 2026 · <a href="mailto:hello@concubro.com">reach out</a></footer>
+  <script src="./footnote-tooltip.js?v=20260827a" defer></script>
+  <script src="./false-edge.js?v=20260814e" defer></script>
+</body>
+</html>
